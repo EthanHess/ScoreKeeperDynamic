@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27D4233F1AF52F400099F224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4233E1AF52F400099F224 /* main.m */; };
+		27D423421AF52F400099F224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423411AF52F400099F224 /* AppDelegate.m */; };
+		27D423451AF52F400099F224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423441AF52F400099F224 /* ViewController.m */; };
+		27D423481AF52F400099F224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D423461AF52F400099F224 /* Main.storyboard */; };
+		27D4234A1AF52F400099F224 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D423491AF52F400099F224 /* Images.xcassets */; };
+		27D4234D1AF52F400099F224 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D4234B1AF52F400099F224 /* LaunchScreen.xib */; };
+		27D423591AF52F400099F224 /* ScoreKeeperDynamicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */; };
+		27D423641AF534610099F224 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423631AF534610099F224 /* TableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27D423531AF52F400099F224 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D423311AF52F400099F224 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27D423381AF52F400099F224;
+			remoteInfo = ScoreKeeperDynamic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27D423391AF52F400099F224 /* ScoreKeeperDynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeperDynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D4233D1AF52F400099F224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D4233E1AF52F400099F224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27D423401AF52F400099F224 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27D423411AF52F400099F224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27D423431AF52F400099F224 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27D423441AF52F400099F224 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		27D423471AF52F400099F224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27D423491AF52F400099F224 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27D4234C1AF52F400099F224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		27D423521AF52F400099F224 /* ScoreKeeperDynamicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreKeeperDynamicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D423571AF52F400099F224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeperDynamicTests.m; sourceTree = "<group>"; };
+		27D423621AF534610099F224 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		27D423631AF534610099F224 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27D423361AF52F400099F224 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D4234F1AF52F400099F224 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27D423301AF52F400099F224 = {
+			isa = PBXGroup;
+			children = (
+				27D4233B1AF52F400099F224 /* ScoreKeeperDynamic */,
+				27D423551AF52F400099F224 /* ScoreKeeperDynamicTests */,
+				27D4233A1AF52F400099F224 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27D4233A1AF52F400099F224 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27D423391AF52F400099F224 /* ScoreKeeperDynamic.app */,
+				27D423521AF52F400099F224 /* ScoreKeeperDynamicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27D4233B1AF52F400099F224 /* ScoreKeeperDynamic */ = {
+			isa = PBXGroup;
+			children = (
+				27D423401AF52F400099F224 /* AppDelegate.h */,
+				27D423411AF52F400099F224 /* AppDelegate.m */,
+				27D423431AF52F400099F224 /* ViewController.h */,
+				27D423441AF52F400099F224 /* ViewController.m */,
+				27D423621AF534610099F224 /* TableViewCell.h */,
+				27D423631AF534610099F224 /* TableViewCell.m */,
+				27D423461AF52F400099F224 /* Main.storyboard */,
+				27D423491AF52F400099F224 /* Images.xcassets */,
+				27D4234B1AF52F400099F224 /* LaunchScreen.xib */,
+				27D4233C1AF52F400099F224 /* Supporting Files */,
+			);
+			path = ScoreKeeperDynamic;
+			sourceTree = "<group>";
+		};
+		27D4233C1AF52F400099F224 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27D4233D1AF52F400099F224 /* Info.plist */,
+				27D4233E1AF52F400099F224 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D423551AF52F400099F224 /* ScoreKeeperDynamicTests */ = {
+			isa = PBXGroup;
+			children = (
+				27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */,
+				27D423561AF52F400099F224 /* Supporting Files */,
+			);
+			path = ScoreKeeperDynamicTests;
+			sourceTree = "<group>";
+		};
+		27D423561AF52F400099F224 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27D423571AF52F400099F224 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27D423381AF52F400099F224 /* ScoreKeeperDynamic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D4235C1AF52F400099F224 /* Build configuration list for PBXNativeTarget "ScoreKeeperDynamic" */;
+			buildPhases = (
+				27D423351AF52F400099F224 /* Sources */,
+				27D423361AF52F400099F224 /* Frameworks */,
+				27D423371AF52F400099F224 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoreKeeperDynamic;
+			productName = ScoreKeeperDynamic;
+			productReference = 27D423391AF52F400099F224 /* ScoreKeeperDynamic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27D423511AF52F400099F224 /* ScoreKeeperDynamicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D4235F1AF52F400099F224 /* Build configuration list for PBXNativeTarget "ScoreKeeperDynamicTests" */;
+			buildPhases = (
+				27D4234E1AF52F400099F224 /* Sources */,
+				27D4234F1AF52F400099F224 /* Frameworks */,
+				27D423501AF52F400099F224 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27D423541AF52F400099F224 /* PBXTargetDependency */,
+			);
+			name = ScoreKeeperDynamicTests;
+			productName = ScoreKeeperDynamicTests;
+			productReference = 27D423521AF52F400099F224 /* ScoreKeeperDynamicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27D423311AF52F400099F224 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Ethan Hess";
+				TargetAttributes = {
+					27D423381AF52F400099F224 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					27D423511AF52F400099F224 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 27D423381AF52F400099F224;
+					};
+				};
+			};
+			buildConfigurationList = 27D423341AF52F400099F224 /* Build configuration list for PBXProject "ScoreKeeperDynamic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27D423301AF52F400099F224;
+			productRefGroup = 27D4233A1AF52F400099F224 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27D423381AF52F400099F224 /* ScoreKeeperDynamic */,
+				27D423511AF52F400099F224 /* ScoreKeeperDynamicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27D423371AF52F400099F224 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D423481AF52F400099F224 /* Main.storyboard in Resources */,
+				27D4234D1AF52F400099F224 /* LaunchScreen.xib in Resources */,
+				27D4234A1AF52F400099F224 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D423501AF52F400099F224 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27D423351AF52F400099F224 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D423451AF52F400099F224 /* ViewController.m in Sources */,
+				27D423641AF534610099F224 /* TableViewCell.m in Sources */,
+				27D423421AF52F400099F224 /* AppDelegate.m in Sources */,
+				27D4233F1AF52F400099F224 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D4234E1AF52F400099F224 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D423591AF52F400099F224 /* ScoreKeeperDynamicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27D423541AF52F400099F224 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27D423381AF52F400099F224 /* ScoreKeeperDynamic */;
+			targetProxy = 27D423531AF52F400099F224 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27D423461AF52F400099F224 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D423471AF52F400099F224 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27D4234B1AF52F400099F224 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D4234C1AF52F400099F224 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27D4235A1AF52F400099F224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27D4235B1AF52F400099F224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27D4235D1AF52F400099F224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ScoreKeeperDynamic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27D4235E1AF52F400099F224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ScoreKeeperDynamic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27D423601AF52F400099F224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ScoreKeeperDynamicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoreKeeperDynamic.app/ScoreKeeperDynamic";
+			};
+			name = Debug;
+		};
+		27D423611AF52F400099F224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ScoreKeeperDynamicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoreKeeperDynamic.app/ScoreKeeperDynamic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27D423341AF52F400099F224 /* Build configuration list for PBXProject "ScoreKeeperDynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D4235A1AF52F400099F224 /* Debug */,
+				27D4235B1AF52F400099F224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D4235C1AF52F400099F224 /* Build configuration list for PBXNativeTarget "ScoreKeeperDynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D4235D1AF52F400099F224 /* Debug */,
+				27D4235E1AF52F400099F224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27D4235F1AF52F400099F224 /* Build configuration list for PBXNativeTarget "ScoreKeeperDynamicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D423601AF52F400099F224 /* Debug */,
+				27D423611AF52F400099F224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27D423311AF52F400099F224 /* Project object */;
+}
