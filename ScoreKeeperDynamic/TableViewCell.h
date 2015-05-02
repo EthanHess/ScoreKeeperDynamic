@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewCell : UITableViewCell
+@interface TableViewCell : UITableViewCell <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIStepper *stepper;
