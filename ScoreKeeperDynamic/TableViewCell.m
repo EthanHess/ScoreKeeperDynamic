@@ -43,7 +43,20 @@
 
 - (void)setUpConstraints {
     
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_label, _textField, _stepper);
     
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_textField(==50)]" options:0 metrics:nil views:viewsDictionary];
+    
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_textField(==175)]-30-[_label(==50)]-30-[_stepper(==100)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    
+    NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.label attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    
+    NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.stepper attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    
+    [self addConstraints:verticalConstraints];
+    [self addConstraints:horizontalConstraints];
+    [self addConstraint:equalConstraint];
+    [self addConstraint:equalConstraintII];
     
     
 }
