@@ -16,4 +16,6 @@
 
 + (CGFloat)headerHeight;
 
+- (void)updateWithTitle:(NSInteger)index;
+
 @end

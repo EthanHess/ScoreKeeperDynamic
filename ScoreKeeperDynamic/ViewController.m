@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TableViewCell.h"
+#import "SectionHeaderView.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -69,6 +70,22 @@
     
     return 90;
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return [SectionHeaderView headerHeight];
+    
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, [SectionHeaderView headerHeight]);
+    
+    SectionHeaderView *sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
+    [sectionHeaderView updateWithTitle:section];
+    
+    return sectionHeaderView;
 }
 
 - (void)addPlayer:(id)sender {
