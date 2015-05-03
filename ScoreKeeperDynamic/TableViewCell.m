@@ -30,6 +30,7 @@
         [self addSubview:self.label];
     
         self.textField = [UITextField new];
+        self.textField.delegate = self; 
         self.textField.translatesAutoresizingMaskIntoConstraints = NO;
         self.textField.placeholder = @"enter name";
         self.textField.backgroundColor = [UIColor lightGrayColor];
@@ -66,12 +67,16 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    [self.textField becomeFirstResponder];
+    [textField becomeFirstResponder];
+    
+    
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [self.textField resignFirstResponder];
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 

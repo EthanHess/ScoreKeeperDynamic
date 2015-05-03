@@ -15,6 +15,7 @@
 		27D4234D1AF52F400099F224 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D4234B1AF52F400099F224 /* LaunchScreen.xib */; };
 		27D423591AF52F400099F224 /* ScoreKeeperDynamicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */; };
 		27D423641AF534610099F224 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423631AF534610099F224 /* TableViewCell.m */; };
+		27D4236A1AF6D76B0099F224 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423691AF6D76B0099F224 /* SectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeperDynamicTests.m; sourceTree = "<group>"; };
 		27D423621AF534610099F224 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		27D423631AF534610099F224 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		27D423681AF6D76B0099F224 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		27D423691AF6D76B0099F224 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				27D423441AF52F400099F224 /* ViewController.m */,
 				27D423621AF534610099F224 /* TableViewCell.h */,
 				27D423631AF534610099F224 /* TableViewCell.m */,
+				27D423681AF6D76B0099F224 /* SectionHeaderView.h */,
+				27D423691AF6D76B0099F224 /* SectionHeaderView.m */,
 				27D423461AF52F400099F224 /* Main.storyboard */,
 				27D423491AF52F400099F224 /* Images.xcassets */,
 				27D4234B1AF52F400099F224 /* LaunchScreen.xib */,
@@ -227,6 +232,7 @@
 				27D423451AF52F400099F224 /* ViewController.m in Sources */,
 				27D423641AF534610099F224 /* TableViewCell.m in Sources */,
 				27D423421AF52F400099F224 /* AppDelegate.m in Sources */,
+				27D4236A1AF6D76B0099F224 /* SectionHeaderView.m in Sources */,
 				27D4233F1AF52F400099F224 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +430,7 @@
 				27D4235E1AF52F400099F224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27D4235F1AF52F400099F224 /* Build configuration list for PBXNativeTarget "ScoreKeeperDynamicTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				27D423611AF52F400099F224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
