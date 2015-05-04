@@ -19,6 +19,7 @@
     
         self.stepper = [UIStepper new];
         self.stepper.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.stepper addTarget:self action:@selector(stepperValueChanged:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.stepper];
     
         self.label = [UILabel new];
@@ -63,6 +64,14 @@
     [self addConstraint:equalConstraintII];
     
     
+}
+
+- (void)stepperValueChanged:(id)sender {
+    
+    UIStepper *stepper = sender;
+//    NSInteger index = stepper.tag;
+    double value = stepper.value;
+    self.label.text = [NSString stringWithFormat:@"%d", (int)value];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

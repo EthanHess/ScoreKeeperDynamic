@@ -12,6 +12,8 @@
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSMutableArray *scoreLabels;
+
 @end
 
 @implementation ViewController
@@ -57,6 +59,7 @@
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TableViewCell class])];
     
+    
     return cell;
     
 }
@@ -87,6 +90,7 @@
     
     return sectionHeaderView;
 }
+
 
 - (void)addPlayer:(id)sender {
     
