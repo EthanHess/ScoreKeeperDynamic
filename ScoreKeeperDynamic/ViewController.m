@@ -41,7 +41,7 @@
 
 - (void)setUpNavigationBar {
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addPlayer:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addGame:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     UIBarButtonItem *subtractButton = [[UIBarButtonItem alloc] initWithTitle:@"-" style:UIBarButtonItemStylePlain target:self action:@selector(subtractPlayer:)];
@@ -92,9 +92,27 @@
 }
 
 
-- (void)addPlayer:(id)sender {
+- (void)addGame:(id)sender {
+    
+    UIAlertController *addAlert = [UIAlertController alertControllerWithTitle:@"Game Name" message:@"Add Game" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [addAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Game name";
+    }];
+    
+    [addAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Number of Players";
+    }];
+    
+    [addAlert addAction:[UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+    }]];
     
     
+    [self presentViewController:addAlert animated:YES completion:nil];
+    
+    [self.tableView reloadData];
     
 }
 
