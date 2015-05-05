@@ -16,6 +16,11 @@
 		27D423591AF52F400099F224 /* ScoreKeeperDynamicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423581AF52F400099F224 /* ScoreKeeperDynamicTests.m */; };
 		27D423641AF534610099F224 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423631AF534610099F224 /* TableViewCell.m */; };
 		27D4236A1AF6D76B0099F224 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423691AF6D76B0099F224 /* SectionHeaderView.m */; };
+		27D423701AF7D98B0099F224 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4236F1AF7D98B0099F224 /* GameController.m */; };
+		27D423DC1AF917540099F224 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D423DA1AF917540099F224 /* Model.xcdatamodeld */; };
+		27D423E51AF9198A0099F224 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423E41AF9198A0099F224 /* Stack.m */; };
+		27D4241A1AF92A820099F224 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D424191AF92A820099F224 /* Game.m */; };
+		27D4241D1AF92A830099F224 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4241C1AF92A830099F224 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,15 @@
 		27D423631AF534610099F224 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		27D423681AF6D76B0099F224 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		27D423691AF6D76B0099F224 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		27D4236E1AF7D98B0099F224 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		27D4236F1AF7D98B0099F224 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		27D423DB1AF917540099F224 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		27D423E31AF9198A0099F224 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		27D423E41AF9198A0099F224 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		27D424181AF92A820099F224 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../Game.h; sourceTree = "<group>"; };
+		27D424191AF92A820099F224 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = ../Game.m; sourceTree = "<group>"; };
+		27D4241B1AF92A830099F224 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
+		27D4241C1AF92A830099F224 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,15 @@
 				27D423631AF534610099F224 /* TableViewCell.m */,
 				27D423681AF6D76B0099F224 /* SectionHeaderView.h */,
 				27D423691AF6D76B0099F224 /* SectionHeaderView.m */,
+				27D4236E1AF7D98B0099F224 /* GameController.h */,
+				27D4236F1AF7D98B0099F224 /* GameController.m */,
+				27D423DA1AF917540099F224 /* Model.xcdatamodeld */,
+				27D423E31AF9198A0099F224 /* Stack.h */,
+				27D423E41AF9198A0099F224 /* Stack.m */,
+				27D4241B1AF92A830099F224 /* Player.h */,
+				27D4241C1AF92A830099F224 /* Player.m */,
+				27D424181AF92A820099F224 /* Game.h */,
+				27D424191AF92A820099F224 /* Game.m */,
 				27D423461AF52F400099F224 /* Main.storyboard */,
 				27D423491AF52F400099F224 /* Images.xcassets */,
 				27D4234B1AF52F400099F224 /* LaunchScreen.xib */,
@@ -229,10 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D4241A1AF92A820099F224 /* Game.m in Sources */,
 				27D423451AF52F400099F224 /* ViewController.m in Sources */,
 				27D423641AF534610099F224 /* TableViewCell.m in Sources */,
 				27D423421AF52F400099F224 /* AppDelegate.m in Sources */,
+				27D4241D1AF92A830099F224 /* Player.m in Sources */,
+				27D423DC1AF917540099F224 /* Model.xcdatamodeld in Sources */,
+				27D423701AF7D98B0099F224 /* GameController.m in Sources */,
 				27D4236A1AF6D76B0099F224 /* SectionHeaderView.m in Sources */,
+				27D423E51AF9198A0099F224 /* Stack.m in Sources */,
 				27D4233F1AF52F400099F224 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +470,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		27D423DA1AF917540099F224 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				27D423DB1AF917540099F224 /* Model.xcdatamodel */,
+			);
+			currentVersion = 27D423DB1AF917540099F224 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 27D423311AF52F400099F224 /* Project object */;
 }
