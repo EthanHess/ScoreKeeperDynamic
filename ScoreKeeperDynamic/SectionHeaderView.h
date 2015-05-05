@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SectionHeaderView : UIView
+@interface SectionHeaderView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UIButton *saveButton;
-@property (nonatomic, strong) UIButton *clearButton;
+@property (nonatomic, strong) UITextField *addField; 
 
 + (CGFloat)headerHeight;
 

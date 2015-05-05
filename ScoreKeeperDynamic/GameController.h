@@ -19,4 +19,8 @@
 
 + (GameController *)sharedInstance;
 
+- (void)addGameWithName:(NSString *)name;
+
+- (void)addPlayerWithName:(NSString *)name toGame:(Game *)game;
+
 @end

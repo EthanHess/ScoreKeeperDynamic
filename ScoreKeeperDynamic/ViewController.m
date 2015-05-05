@@ -67,7 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return [GameController sharedInstance].players.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,6 +92,11 @@
     return sectionHeaderView;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return [GameController sharedInstance].games.count;
+}
+
 
 - (void)addGame:(id)sender {
     
@@ -101,13 +106,11 @@
         textField.placeholder = @"Game name";
     }];
     
-    [addAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Number of Players";
-    }];
-    
     [addAlert addAction:[UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
+        [[GameController sharedInstance] addGameWithName:((UITextField *)addAlert.textFields[0]).text];
         
+        [self.tableView reloadData];
         
     }]];
     

@@ -30,13 +30,13 @@
         self.label.text = @"0";
         [self addSubview:self.label];
     
-        self.textField = [UITextField new];
-        self.textField.delegate = self; 
-        self.textField.translatesAutoresizingMaskIntoConstraints = NO;
-        self.textField.placeholder = @"enter name";
-        self.textField.backgroundColor = [UIColor lightGrayColor];
-        self.textField.font = [UIFont fontWithName:@"Chalkduster" size:16];
-        [self addSubview:self.textField];
+        self.nameLabel = [UILabel new];
+        self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        self.backgroundColor = [UIColor blueColor];
+        self.nameLabel.textColor = [UIColor yellowColor];
+        self.nameLabel.text = @"";
+        [self addSubview:self.nameLabel];
+        
       
         [self setUpConstraints];
     
@@ -48,15 +48,15 @@
 
 - (void)setUpConstraints {
     
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_textField, _label, _stepper);
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_nameLabel, _label, _stepper);
     
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_textField(==50)]" options:0 metrics:nil views:viewsDictionary];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_nameLabel(==50)]" options:0 metrics:nil views:viewsDictionary];
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_textField(==150)]-30-[_label(==50)]-30-[_stepper(==100)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_nameLabel(==150)]-30-[_label(==50)]-30-[_stepper(==100)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
     
-    NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.label attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.nameLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.label attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
-    NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.stepper attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.nameLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.stepper attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];
@@ -74,19 +74,7 @@
     self.label.text = [NSString stringWithFormat:@"%d", (int)value];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
-    [textField becomeFirstResponder];
-    
-    
-}
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [textField resignFirstResponder];
-    
-    return YES;
-}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

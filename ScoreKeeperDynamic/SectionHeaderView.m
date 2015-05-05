@@ -8,7 +8,7 @@
 
 #import "SectionHeaderView.h"
 
-@implementation SectionHeaderView
+@implementation SectionHeaderView 
 
 - (id)initWithFrame:(CGRect)frame {
     
@@ -23,23 +23,18 @@
         self.label.translatesAutoresizingMaskIntoConstraints = NO;
         self.label.backgroundColor = backgroundColor;
         self.label.textColor = [UIColor whiteColor];
-        self.label.text = @"Test Game";
         self.label.font = [UIFont fontWithName:@"Chalkduster" size:20];
         [self addSubview:self.label];
         
-        self.saveButton = [UIButton new];
-        self.saveButton.translatesAutoresizingMaskIntoConstraints = NO;
-        self.saveButton.backgroundColor = [UIColor whiteColor];
-        [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
-        [self.saveButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [self addSubview:self.saveButton];
+        self.addField = [UITextField new];
+        self.addField.translatesAutoresizingMaskIntoConstraints = NO;
+        self.addField.backgroundColor = [UIColor lightGrayColor];
+        self.addField.textColor = [UIColor blueColor];
+        self.addField.placeholder = @"Add Player"; 
+        self.addField.font = [UIFont fontWithName:@"Chalkduster" size:16];
+        self.addField.delegate = self;
+        [self addSubview:self.addField];
         
-        self.clearButton = [UIButton new];
-        self.clearButton.translatesAutoresizingMaskIntoConstraints = NO;
-        self.clearButton.backgroundColor = [UIColor whiteColor];
-        [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
-        [self.clearButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [self addSubview:self.clearButton];
         
         [self setUpConstraints];
 
@@ -52,20 +47,18 @@
 
 - (void)setUpConstraints {
     
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_label, _saveButton, _clearButton);
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_label, _addField);
     
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_label(==45)]" options:0 metrics:nil views:viewsDictionary];
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_label(==150)]-30-[_saveButton(==50)]-30-[_clearButton(==50)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_label(==150)]-30-[_addField(==150)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
     
-    NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.saveButton attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.addField attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
-    NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.clearButton attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];
     [self addConstraint:equalConstraint];
-    [self addConstraint:equalConstraintII];
     
     
     
@@ -80,6 +73,20 @@
 - (void)updateWithTitle:(NSInteger)index {
     
     
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [textField becomeFirstResponder];
+    
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end
