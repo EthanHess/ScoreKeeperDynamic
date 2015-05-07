@@ -11,7 +11,8 @@
 @interface SectionHeaderView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UITextField *addField; 
+@property (nonatomic, strong) UITextField *addField;
+@property (nonatomic, strong) UIButton *addButton; 
 
 + (CGFloat)headerHeight;
 
