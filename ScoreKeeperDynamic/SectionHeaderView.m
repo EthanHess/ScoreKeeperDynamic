@@ -7,6 +7,7 @@
 //
 
 #import "SectionHeaderView.h"
+#import "GameController.h"
 
 @implementation SectionHeaderView 
 
@@ -41,6 +42,7 @@
         [self.addButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.addButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addButton.backgroundColor = [UIColor greenColor];
+        [self.addButton addTarget:self action:@selector(addPlayer:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.addButton];
         
         
@@ -83,7 +85,13 @@
 
 - (void)updateWithTitle:(NSInteger)index {
     
+    self.label.text = ((Game *)[GameController sharedInstance].games[index]).name;
     
+}
+
+- (void)addPlayer:(id)sender {
+    
+    [[GameController sharedInstance] addPlayerWithName:self.addField.text toGame:self.game];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

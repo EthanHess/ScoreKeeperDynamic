@@ -60,6 +60,9 @@
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TableViewCell class])];
     
+    cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
+    cell.label.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).score;
+    
     
     return cell;
     

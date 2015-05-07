@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Game.h"
 
 @interface SectionHeaderView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITextField *addField;
-@property (nonatomic, strong) UIButton *addButton; 
+@property (nonatomic, strong) UIButton *addButton;
+@property (nonatomic, strong) Game *game; 
 
 + (CGFloat)headerHeight;
 
