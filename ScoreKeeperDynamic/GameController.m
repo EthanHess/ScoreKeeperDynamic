@@ -46,9 +46,17 @@
     Player *player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
     player.game = game;
+    player.name = name;
     
     [self synchronize];
     
+}
+
+- (void)removeGame:(Game *)game {
+    
+    [game.managedObjectContext deleteObject:game];
+    
+    [self synchronize];
 }
 
 - (void)synchronize {

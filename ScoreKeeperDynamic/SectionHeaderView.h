@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITextField *addField;
 @property (nonatomic, strong) UIButton *addButton;
+@property (nonatomic, strong) UIButton *removeButton; 
 @property (nonatomic, strong) Game *game; 
 
 + (CGFloat)headerHeight;

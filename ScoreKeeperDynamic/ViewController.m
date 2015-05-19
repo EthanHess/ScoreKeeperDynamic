@@ -14,6 +14,7 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *scoreLabels;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 
@@ -58,7 +59,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TableViewCell class])];
+    [tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
     cell.label.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).score;
@@ -70,7 +73,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [GameController sharedInstance].players.count;
+//    return [GameController sharedInstance].players.count;
+    
+    return 3; 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,6 +96,10 @@
     
     SectionHeaderView *sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
     [sectionHeaderView updateWithTitle:section];
+    
+    [sectionHeaderView.removeButton addTarget:self action:@selector(removeGameAlert:) forControlEvents:UIControlEventTouchUpInside];
+
+    //set self.indexPath 
     
     return sectionHeaderView;
 }
@@ -117,6 +126,10 @@
         
     }]];
     
+    [addAlert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }]];
+    
     
     [self presentViewController:addAlert animated:YES completion:nil];
     
@@ -124,7 +137,31 @@
     
 }
 
+- (void)removeGameAlert:(NSIndexPath *)indexPath {
+    
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete Game?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [[GameController sharedInstance]removeGame:(Game *)[GameController sharedInstance].games[indexPath.section]];
+        
+        [self.tableView reloadData];
+        
+    }]];
+                                
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 - (void)subtractPlayer:(id)sender {
+    
     
     
 }

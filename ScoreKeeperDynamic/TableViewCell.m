@@ -15,7 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
     
-        self.backgroundColor = [UIColor colorWithRed:23.0/255.0 green:163.0/255.0 blue:191.0/255.0 alpha:1.0];
+        self.backgroundColor = [UIColor colorWithRed:255/255.0f green:180/255.0f blue:24/255.0f alpha:1.0f];
     
         self.stepper = [UIStepper new];
         self.stepper.translatesAutoresizingMaskIntoConstraints = NO;

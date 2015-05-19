@@ -31,19 +31,29 @@
         self.addField.translatesAutoresizingMaskIntoConstraints = NO;
         self.addField.backgroundColor = [UIColor lightGrayColor];
         self.addField.textColor = [UIColor blueColor];
-        self.addField.placeholder = @"Add Player"; 
+        self.addField.placeholder = @"Add Player";
+        self.addField.textAlignment = NSTextAlignmentCenter;
+        self.addField.borderStyle = UITextBorderStyleRoundedRect;
         self.addField.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addField.delegate = self;
         [self addSubview:self.addField];
         
         self.addButton = [UIButton new];
         self.addButton.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
+        [self.addButton setTitle:@"+" forState:UIControlStateNormal];
         [self.addButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.addButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addButton.backgroundColor = [UIColor greenColor];
         [self.addButton addTarget:self action:@selector(addPlayer:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.addButton];
+        
+        self.removeButton = [UIButton new];
+        self.removeButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.removeButton setTitle:@"x" forState:UIControlStateNormal];
+        [self.removeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.removeButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
+        self.removeButton.backgroundColor = [UIColor redColor];
+        [self addSubview:self.removeButton];
         
         
         [self setUpConstraints];
@@ -55,23 +65,32 @@
     
 }
 
+- (void)updateWithGame:(Game *)game {
+    
+    self.game = game;
+    
+}
+
 - (void)setUpConstraints {
     
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_label, _addField, _addButton);
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_label, _addField, _addButton, _removeButton);
     
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_label(==45)]" options:0 metrics:nil views:viewsDictionary];
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_label(==130)]-15-[_addField(==130)]-15-[_addButton(==50)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_label(==120)]-10-[_addField(==120)]-10-[_addButton(==30)]-10-[_removeButton(==30)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
     
     NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.addField attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
     NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.addButton attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    
+    NSLayoutConstraint *equalConstraintIII = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.removeButton attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];
     [self addConstraint:equalConstraint];
     [self addConstraint:equalConstraintII];
+    [self addConstraint:equalConstraintIII];
     
     
     
