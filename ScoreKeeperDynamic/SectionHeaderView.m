@@ -77,7 +77,7 @@
     
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_label(==45)]" options:0 metrics:nil views:viewsDictionary];
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_label(==120)]-10-[_addField(==120)]-10-[_addButton(==30)]-10-[_removeButton(==30)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_label(==120)]-10-[_addField(==110)]-10-[_addButton(==45)]-10-[_removeButton(==45)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
     
     NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.addField attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
@@ -85,6 +85,8 @@
     
     NSLayoutConstraint *equalConstraintIII = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.removeButton attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
+    self.addButton.layer.cornerRadius = 22.5;
+    self.removeButton.layer.cornerRadius = 22.5;
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];

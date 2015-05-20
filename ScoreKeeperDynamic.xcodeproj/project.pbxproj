@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27933A6B1B0D3444008205E0 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 27933A681B0D3444008205E0 /* Game.m */; };
+		27933A6C1B0D3444008205E0 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 27933A6A1B0D3444008205E0 /* Player.m */; };
 		27D4233F1AF52F400099F224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4233E1AF52F400099F224 /* main.m */; };
 		27D423421AF52F400099F224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423411AF52F400099F224 /* AppDelegate.m */; };
 		27D423451AF52F400099F224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423441AF52F400099F224 /* ViewController.m */; };
@@ -19,8 +21,6 @@
 		27D423701AF7D98B0099F224 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4236F1AF7D98B0099F224 /* GameController.m */; };
 		27D423DC1AF917540099F224 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D423DA1AF917540099F224 /* Model.xcdatamodeld */; };
 		27D423E51AF9198A0099F224 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423E41AF9198A0099F224 /* Stack.m */; };
-		27D4241A1AF92A820099F224 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D424191AF92A820099F224 /* Game.m */; };
-		27D4241D1AF92A830099F224 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4241C1AF92A830099F224 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27933A671B0D3444008205E0 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		27933A681B0D3444008205E0 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		27933A691B0D3444008205E0 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		27933A6A1B0D3444008205E0 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		27D423391AF52F400099F224 /* ScoreKeeperDynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeperDynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D4233D1AF52F400099F224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D4233E1AF52F400099F224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,10 +60,6 @@
 		27D423DB1AF917540099F224 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		27D423E31AF9198A0099F224 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		27D423E41AF9198A0099F224 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
-		27D424181AF92A820099F224 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../Game.h; sourceTree = "<group>"; };
-		27D424191AF92A820099F224 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = ../Game.m; sourceTree = "<group>"; };
-		27D4241B1AF92A830099F224 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
-		27D4241C1AF92A830099F224 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +112,12 @@
 				27D4236E1AF7D98B0099F224 /* GameController.h */,
 				27D4236F1AF7D98B0099F224 /* GameController.m */,
 				27D423DA1AF917540099F224 /* Model.xcdatamodeld */,
+				27933A671B0D3444008205E0 /* Game.h */,
+				27933A681B0D3444008205E0 /* Game.m */,
+				27933A691B0D3444008205E0 /* Player.h */,
+				27933A6A1B0D3444008205E0 /* Player.m */,
 				27D423E31AF9198A0099F224 /* Stack.h */,
 				27D423E41AF9198A0099F224 /* Stack.m */,
-				27D4241B1AF92A830099F224 /* Player.h */,
-				27D4241C1AF92A830099F224 /* Player.m */,
-				27D424181AF92A820099F224 /* Game.h */,
-				27D424191AF92A820099F224 /* Game.m */,
 				27D423461AF52F400099F224 /* Main.storyboard */,
 				27D423491AF52F400099F224 /* Images.xcassets */,
 				27D4234B1AF52F400099F224 /* LaunchScreen.xib */,
@@ -252,11 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D4241A1AF92A820099F224 /* Game.m in Sources */,
+				27933A6B1B0D3444008205E0 /* Game.m in Sources */,
 				27D423451AF52F400099F224 /* ViewController.m in Sources */,
 				27D423641AF534610099F224 /* TableViewCell.m in Sources */,
 				27D423421AF52F400099F224 /* AppDelegate.m in Sources */,
-				27D4241D1AF92A830099F224 /* Player.m in Sources */,
+				27933A6C1B0D3444008205E0 /* Player.m in Sources */,
 				27D423DC1AF917540099F224 /* Model.xcdatamodeld in Sources */,
 				27D423701AF7D98B0099F224 /* GameController.m in Sources */,
 				27D4236A1AF6D76B0099F224 /* SectionHeaderView.m in Sources */,

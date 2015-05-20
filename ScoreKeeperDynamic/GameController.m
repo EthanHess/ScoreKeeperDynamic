@@ -59,6 +59,12 @@
     [self synchronize];
 }
 
+- (void)removePlayer:(Player *)player {
+    
+    
+    
+}
+
 - (void)synchronize {
     
     [[Stack sharedInstance].managedObjectContext save:NULL];

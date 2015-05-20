@@ -18,7 +18,7 @@
 @property (nonatomic, strong) Game *game; 
 
 + (CGFloat)headerHeight;
-
+- (void)updateWithGame:(Game *)game;
 - (void)updateWithTitle:(NSInteger)index;
 
 @end

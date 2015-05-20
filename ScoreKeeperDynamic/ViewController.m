@@ -74,8 +74,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
 //    return [GameController sharedInstance].players.count;
+    Game *game = [[GameController sharedInstance].games objectAtIndex:section];
     
-    return 3; 
+    return game.players.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +86,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
     return [SectionHeaderView headerHeight];
     
 }
@@ -96,9 +96,10 @@
     
     SectionHeaderView *sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
     [sectionHeaderView updateWithTitle:section];
+    [sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
     
     [sectionHeaderView.removeButton addTarget:self action:@selector(removeGameAlert:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     //set self.indexPath 
     
     return sectionHeaderView;

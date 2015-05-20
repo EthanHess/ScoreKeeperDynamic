@@ -15,26 +15,30 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
     
-        self.backgroundColor = [UIColor colorWithRed:255/255.0f green:180/255.0f blue:24/255.0f alpha:1.0f];
+        self.backgroundColor = [UIColor colorWithRed:125/255.0f green:93/255.0f blue:249/255.0f alpha:1.0f];
     
         self.stepper = [UIStepper new];
         self.stepper.translatesAutoresizingMaskIntoConstraints = NO;
+        self.stepper.backgroundColor = [UIColor greenColor];
         [self.stepper addTarget:self action:@selector(stepperValueChanged:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.stepper];
     
         self.label = [UILabel new];
         self.label.translatesAutoresizingMaskIntoConstraints = NO;
-        self.label.backgroundColor = [UIColor blueColor];
+        self.label.backgroundColor = [UIColor colorWithRed:125/255.0f green:182/255.0f blue:244/255.0f alpha:1.0f];
         self.label.textColor = [UIColor yellowColor];
-        self.label.font = [UIFont fontWithName:@"Chalkduster" size:16];
+        self.label.textAlignment = NSTextAlignmentCenter;
+        self.label.font = [UIFont fontWithName:@"Chalkduster" size:20];
         self.label.text = @"0";
         [self addSubview:self.label];
     
         self.nameLabel = [UILabel new];
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        self.backgroundColor = [UIColor blueColor];
+        self.nameLabel.backgroundColor = [UIColor colorWithRed:125/255.0f green:182/255.0f blue:244/255.0f alpha:1.0f];
         self.nameLabel.textColor = [UIColor yellowColor];
         self.nameLabel.text = @"";
+        self.nameLabel.textAlignment = NSTextAlignmentCenter;
+        self.nameLabel.font = [UIFont fontWithName:@"Chalkduster" size:20];
         [self addSubview:self.nameLabel];
         
       
@@ -52,11 +56,17 @@
     
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_nameLabel(==50)]" options:0 metrics:nil views:viewsDictionary];
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_nameLabel(==150)]-30-[_label(==50)]-30-[_stepper(==100)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_nameLabel(==150)]-30-[_label(==50)]-30-[_stepper(==90)]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDictionary];
     
     NSLayoutConstraint *equalConstraint = [NSLayoutConstraint constraintWithItem:self.nameLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.label attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
     
     NSLayoutConstraint *equalConstraintII = [NSLayoutConstraint constraintWithItem:self.nameLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.stepper attribute:NSLayoutAttributeHeight multiplier:1 constant:0.0];
+    
+    self.label.layer.cornerRadius = 25;
+    self.label.layer.masksToBounds = YES;
+    self.nameLabel.layer.cornerRadius = 25;
+    self.nameLabel.layer.masksToBounds = YES;
+    self.stepper.layer.cornerRadius = 15;
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];
