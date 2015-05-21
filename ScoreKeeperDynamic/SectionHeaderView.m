@@ -44,7 +44,7 @@
         [self.addButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.addButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addButton.backgroundColor = [UIColor greenColor];
-        [self.addButton addTarget:self action:@selector(addPlayer:) forControlEvents:UIControlEventTouchUpInside];
+        [self.addButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.addButton];
         
         self.removeButton = [UIButton new];
@@ -110,9 +110,9 @@
     
 }
 
-- (void)addPlayer:(id)sender {
+- (void)addButtonPressed {
     
-    [[GameController sharedInstance] addPlayerWithName:self.addField.text toGame:self.game];
+    [self.delegate addPlayer]; 
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

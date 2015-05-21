@@ -11,10 +11,11 @@
 #import "SectionHeaderView.h"
 #import "GameController.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, GameDelegate>
 
 @property (nonatomic, strong) NSMutableArray *scoreLabels;
 @property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, strong) SectionHeaderView *sectionHeaderView;
 
 @end
 
@@ -73,7 +74,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    return [GameController sharedInstance].players.count;
     Game *game = [[GameController sharedInstance].games objectAtIndex:section];
     
     return game.players.count;
@@ -94,20 +94,34 @@
     
     CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, [SectionHeaderView headerHeight]);
     
-    SectionHeaderView *sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
-    [sectionHeaderView updateWithTitle:section];
-    [sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
+    self.sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
+    [self.sectionHeaderView updateWithTitle:section];
+    self.sectionHeaderView.delegate = self;
+    [self.sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
     
-    [sectionHeaderView.removeButton addTarget:self action:@selector(removeGameAlert:) forControlEvents:UIControlEventTouchUpInside];
+    [self.sectionHeaderView.removeButton addTarget:self action:@selector(removeGameAlert:) forControlEvents:UIControlEventTouchUpInside];
     
     //set self.indexPath 
     
-    return sectionHeaderView;
+    return self.sectionHeaderView;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return [GameController sharedInstance].games.count;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [[GameController sharedInstance]removePlayer:[GameController sharedInstance].players[indexPath.row]];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self.tableView reloadData];
+        
+    }
 }
 
 
@@ -138,6 +152,21 @@
     
 }
 
+- (void)addPlayer {
+    
+    
+    [[GameController sharedInstance] addPlayerWithName:self.sectionHeaderView.addField.text toGame:self.sectionHeaderView.game];
+    
+    [self.tableView reloadData];
+    
+}
+
+- (void)deleteButtonPressed {
+    
+    
+    
+}
+
 - (void)removeGameAlert:(NSIndexPath *)indexPath {
     
     
@@ -160,6 +189,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+
 
 - (void)subtractPlayer:(id)sender {
     

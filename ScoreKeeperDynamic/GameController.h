@@ -23,6 +23,8 @@
 
 - (void)addPlayerWithName:(NSString *)name toGame:(Game *)game;
 
+- (void)removePlayer:(Player *)player;
+
 - (void)removeGame:(Game *)game;
 
 @end

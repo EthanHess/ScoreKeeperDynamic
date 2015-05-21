@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController 
 
 @property (nonatomic, strong) UITableView *tableView;
+
+- (void)deleteButtonPressed;
+- (void)addPlayer;
 
 @end
 

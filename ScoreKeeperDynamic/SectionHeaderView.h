@@ -9,13 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 
+@protocol GameDelegate <NSObject>
+
+@required
+
+- (void)deleteButtonPressed;
+- (void)addPlayer;
+
+@end
+
 @interface SectionHeaderView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITextField *addField;
 @property (nonatomic, strong) UIButton *addButton;
 @property (nonatomic, strong) UIButton *removeButton; 
-@property (nonatomic, strong) Game *game; 
+@property (nonatomic, strong) Game *game;
+@property (nonatomic, strong) id <GameDelegate> delegate;
 
 + (CGFloat)headerHeight;
 - (void)updateWithGame:(Game *)game;
