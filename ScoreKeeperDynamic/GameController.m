@@ -32,6 +32,15 @@
     
 }
 
+- (NSArray *)players {
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+    
+    NSArray *objects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:NULL];
+    
+    return objects; 
+}
+
 - (void)addGameWithName:(NSString *)name {
     
     Game *game = [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];

@@ -64,10 +64,10 @@
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-//    cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
+    cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
 //    cell.label.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).score;
     
-    cell.nameLabel.text = self.sectionHeaderView.addField.text;
+//    cell.nameLabel.text = self.sectionHeaderView.addField.text;
     
     
     return cell;
