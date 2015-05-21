@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
+#import "TableViewCell.h"
 
 @protocol GameDelegate <NSObject>
 
@@ -26,6 +27,7 @@
 @property (nonatomic, strong) UIButton *removeButton; 
 @property (nonatomic, strong) Game *game;
 @property (nonatomic, strong) id <GameDelegate> delegate;
+@property (nonatomic, strong) TableViewCell *cell; 
 
 + (CGFloat)headerHeight;
 - (void)updateWithGame:(Game *)game;

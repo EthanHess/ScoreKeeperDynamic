@@ -9,6 +9,7 @@
 #import "SectionHeaderView.h"
 #import "GameController.h"
 
+
 @implementation SectionHeaderView 
 
 - (id)initWithFrame:(CGRect)frame {
@@ -111,6 +112,8 @@
 }
 
 - (void)addButtonPressed {
+    
+    [self.cell updateWithTitle:self.addField.text];
     
     [self.delegate addPlayer]; 
 }

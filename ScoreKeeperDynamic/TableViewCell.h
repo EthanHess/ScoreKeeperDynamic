@@ -14,4 +14,6 @@
 @property (nonatomic, strong) UIStepper *stepper;
 @property (nonatomic, strong) UILabel *nameLabel;
 
+- (void)updateWithTitle:(NSString *)title;
+
 @end

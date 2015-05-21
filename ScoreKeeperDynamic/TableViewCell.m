@@ -84,8 +84,11 @@
     self.label.text = [NSString stringWithFormat:@"%d", (int)value];
 }
 
-
-
+- (void)updateWithTitle:(NSString *)title {
+    
+    self.label.text = title;
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

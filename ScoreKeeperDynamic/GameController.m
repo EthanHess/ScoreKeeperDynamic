@@ -61,7 +61,7 @@
 
 - (void)removePlayer:(Player *)player {
     
-    
+    [player.managedObjectContext deleteObject:player];
     
 }
 
