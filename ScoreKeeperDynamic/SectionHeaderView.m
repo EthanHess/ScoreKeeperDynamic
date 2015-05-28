@@ -54,6 +54,7 @@
         [self.removeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.removeButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.removeButton.backgroundColor = [UIColor redColor];
+        [self.removeButton addTarget:self action:@selector(removeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.removeButton];
         
         
@@ -117,6 +118,13 @@
     
     [self.delegate addPlayer]; 
 }
+
+- (void)removeButtonPressed {
+    
+    [self.delegate deleteButtonPressed:self.game];
+    
+}
+
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     

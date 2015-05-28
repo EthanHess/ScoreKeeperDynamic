@@ -14,7 +14,7 @@
 
 @required
 
-- (void)deleteButtonPressed;
+- (void)deleteButtonPressed:(Game *)game;
 - (void)addPlayer;
 
 @end

@@ -14,7 +14,6 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, GameDelegate>
 
 @property (nonatomic, strong) NSMutableArray *scoreLabels;
-@property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) SectionHeaderView *sectionHeaderView;
 
 @end
@@ -65,6 +64,7 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
+    
 //    cell.label.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).score;
     
 //    cell.nameLabel.text = self.sectionHeaderView.addField.text;
@@ -101,9 +101,10 @@
     self.sectionHeaderView.delegate = self;
     [self.sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
     
-    [self.sectionHeaderView.removeButton addTarget:self action:@selector(removeGameAlert:) forControlEvents:UIControlEventTouchUpInside];
+    //syncs game to section header view
     
-    //set self.indexPath 
+    self.sectionHeaderView.game = [GameController sharedInstance].games[section];
+    
     
     return self.sectionHeaderView;
 }
@@ -163,25 +164,19 @@
     
 }
 
-- (void)deleteButtonPressed {
-    
-    
-    
-}
-
-- (void)removeGameAlert:(NSIndexPath *)indexPath {
-    
+- (void)deleteButtonPressed:(Game *)game
+{
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete Game?" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        [[GameController sharedInstance]removeGame:(Game *)[GameController sharedInstance].games[indexPath.section]];
-        
-        [self.tableView reloadData];
+    [[GameController sharedInstance] removeGame:game];
+    
+    [self.tableView reloadData];
         
     }]];
-                                
+    
     [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         
         [self dismissViewControllerAnimated:YES completion:nil];

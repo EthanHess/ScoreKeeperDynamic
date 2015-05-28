@@ -12,8 +12,5 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-- (void)deleteButtonPressed;
-- (void)addPlayer;
-
 @end
 
