@@ -101,8 +101,6 @@
     self.sectionHeaderView.delegate = self;
     [self.sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
     
-    //syncs game to section header view
-    
     self.sectionHeaderView.game = [GameController sharedInstance].games[section];
     
     
@@ -155,10 +153,16 @@
     
 }
 
-- (void)addPlayer {
+- (void)removePlayer:(Player *)player {
     
     
-    [[GameController sharedInstance] addPlayerWithName:self.sectionHeaderView.addField.text toGame:self.sectionHeaderView.game];
+    
+}
+
+- (void)addPlayerToGame:(Game *)game {
+    
+    
+    [[GameController sharedInstance] addPlayerWithName:self.sectionHeaderView.addField.text toGame:game];
     
     [self.tableView reloadData];
     

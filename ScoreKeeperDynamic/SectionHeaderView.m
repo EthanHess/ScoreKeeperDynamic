@@ -116,7 +116,7 @@
     
     [self.cell updateWithTitle:self.addField.text];
     
-    [self.delegate addPlayer]; 
+    [self.delegate addPlayerToGame:self.game];
 }
 
 - (void)removeButtonPressed {
