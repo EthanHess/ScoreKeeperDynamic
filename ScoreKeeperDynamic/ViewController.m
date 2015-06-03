@@ -46,8 +46,6 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addGame:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    UIBarButtonItem *subtractButton = [[UIBarButtonItem alloc] initWithTitle:@"-" style:UIBarButtonItemStylePlain target:self action:@selector(subtractPlayer:)];
-    self.navigationItem.leftBarButtonItem = subtractButton;
     
 }
 
@@ -63,7 +61,11 @@
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.nameLabel.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).name;
+    Game *game = [[GameController sharedInstance].games objectAtIndex:indexPath.section];
+    Player *player = [game.players objectAtIndex:indexPath.row];
+    
+    cell.nameLabel.text = player.name;
+    
     
 //    cell.label.text = ((Player *)[GameController sharedInstance].players[indexPath.row]).score;
     
@@ -99,10 +101,10 @@
     self.sectionHeaderView = [[SectionHeaderView alloc]initWithFrame:frame];
     [self.sectionHeaderView updateWithTitle:section];
     self.sectionHeaderView.delegate = self;
-    [self.sectionHeaderView updateWithGame:[[GameController sharedInstance].games objectAtIndex:section]];
     
-    self.sectionHeaderView.game = [GameController sharedInstance].games[section];
+    Game *currentGame = [GameController sharedInstance].games[section];
     
+    [self.sectionHeaderView updateWithGame:currentGame];
     
     return self.sectionHeaderView;
 }
@@ -116,7 +118,9 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        [[GameController sharedInstance]removePlayer:[GameController sharedInstance].players[indexPath.row]];
+        Game *game = [GameController sharedInstance].games[indexPath.section];
+        
+        [[GameController sharedInstance]removePlayer:game.players[indexPath.row]];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
@@ -165,7 +169,6 @@
     [[GameController sharedInstance] addPlayerWithName:self.sectionHeaderView.addField.text toGame:game];
     
     [self.tableView reloadData];
-    
 }
 
 - (void)deleteButtonPressed:(Game *)game
@@ -191,18 +194,5 @@
     
 }
 
-
-- (void)subtractPlayer:(id)sender {
-    
-    
-    
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

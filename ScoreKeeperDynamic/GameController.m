@@ -70,8 +70,8 @@
 
 - (void)removePlayer:(Player *)player {
     
-    [player.managedObjectContext deleteObject:player];
-    
+    [[Stack sharedInstance].managedObjectContext deleteObject:player];
+    [self synchronize];
 }
 
 - (void)synchronize {
