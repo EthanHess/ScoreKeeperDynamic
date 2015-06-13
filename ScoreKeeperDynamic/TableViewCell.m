@@ -15,12 +15,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
     
-        self.backgroundColor = [UIColor colorWithRed:125/255.0f green:93/255.0f blue:249/255.0f alpha:1.0f];
+        self.backgroundColor = [UIColor colorWithRed:255/255.0f green:253/255.0f blue:166/255.0f alpha:1.0f];
     
         self.stepper = [UIStepper new];
         self.stepper.translatesAutoresizingMaskIntoConstraints = NO;
         self.stepper.backgroundColor = [UIColor greenColor];
         [self.stepper addTarget:self action:@selector(stepperValueChanged:) forControlEvents:UIControlEventTouchUpInside];
+        self.stepper.layer.borderWidth = 3.0;
+        self.stepper.layer.borderColor = [[UIColor blueColor]CGColor];
         [self addSubview:self.stepper];
     
         self.label = [UILabel new];
@@ -30,8 +32,11 @@
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.font = [UIFont fontWithName:@"Chalkduster" size:20];
         self.label.text = @"0";
+        self.label.layer.borderWidth = 3.0;
+        self.label.layer.borderColor = [[UIColor blueColor]CGColor];
         [self addSubview:self.label];
     
+        
         self.nameLabel = [UILabel new];
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
         self.nameLabel.backgroundColor = [UIColor colorWithRed:125/255.0f green:182/255.0f blue:244/255.0f alpha:1.0f];
@@ -39,6 +44,8 @@
         self.nameLabel.text = @"";
         self.nameLabel.textAlignment = NSTextAlignmentCenter;
         self.nameLabel.font = [UIFont fontWithName:@"Chalkduster" size:20];
+        self.nameLabel.layer.borderWidth = 3.0;
+        self.nameLabel.layer.borderColor = [[UIColor blueColor]CGColor];
         [self addSubview:self.nameLabel];
         
       
@@ -67,6 +74,7 @@
     self.nameLabel.layer.cornerRadius = 25;
     self.nameLabel.layer.masksToBounds = YES;
     self.stepper.layer.cornerRadius = 15;
+    self.stepper.layer.masksToBounds = YES; 
     
     [self addConstraints:verticalConstraints];
     [self addConstraints:horizontalConstraints];

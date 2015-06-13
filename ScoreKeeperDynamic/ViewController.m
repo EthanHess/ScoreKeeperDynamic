@@ -43,10 +43,11 @@
 
 - (void)setUpNavigationBar {
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addGame:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addGame)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save Scores" style:UIBarButtonItemStylePlain target:self action:@selector(saveScores)];
+    self.navigationItem.leftBarButtonItem = saveButton; 
 }
 
 - (void)registerTableView:(UITableView *)tableView {
@@ -90,6 +91,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
     return [SectionHeaderView headerHeight];
     
 }
@@ -130,7 +132,7 @@
 }
 
 
-- (void)addGame:(id)sender {
+- (void)addGame {
     
     UIAlertController *addAlert = [UIAlertController alertControllerWithTitle:@"Game Name" message:@"Add Game" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -154,6 +156,11 @@
     [self presentViewController:addAlert animated:YES completion:nil];
     
     [self.tableView reloadData];
+    
+}
+
+- (void)saveScores {
+    
     
 }
 

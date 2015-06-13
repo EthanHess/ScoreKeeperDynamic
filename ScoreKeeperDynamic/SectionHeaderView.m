@@ -10,14 +10,14 @@
 #import "GameController.h"
 
 
-@implementation SectionHeaderView 
+@implementation SectionHeaderView
 
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
     if (self) {
         
-        UIColor *backgroundColor = [UIColor colorWithRed:89.0/255.0 green:169.0/255.0 blue:223.0/255.0 alpha:1.0];
+        UIColor *backgroundColor = [UIColor colorWithRed:255/255.0f green:113/255.0f blue:68/255.0f alpha:1.0f];
         
         self.backgroundColor = backgroundColor;
         
@@ -37,6 +37,8 @@
         self.addField.borderStyle = UITextBorderStyleRoundedRect;
         self.addField.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addField.delegate = self;
+        self.addField.layer.borderWidth = 3.0;
+        self.addField.layer.borderColor = [[UIColor whiteColor]CGColor];
         [self addSubview:self.addField];
         
         self.addButton = [UIButton new];
@@ -46,6 +48,8 @@
         self.addButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.addButton.backgroundColor = [UIColor greenColor];
         [self.addButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+        self.addButton.layer.borderWidth = 3.0;
+        self.addButton.layer.borderColor = [[UIColor whiteColor]CGColor];
         [self addSubview:self.addButton];
         
         self.removeButton = [UIButton new];
@@ -55,6 +59,8 @@
         self.removeButton.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
         self.removeButton.backgroundColor = [UIColor redColor];
         [self.removeButton addTarget:self action:@selector(removeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+        self.removeButton.layer.borderWidth = 3.0;
+        self.removeButton.layer.borderColor = [[UIColor whiteColor]CGColor];
         [self addSubview:self.removeButton];
         
         
